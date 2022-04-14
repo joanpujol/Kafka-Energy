@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "DeviceEvent",
+  "fields": [
+    {
+      "name": "charging",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "charging_source",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "current_capacity",
+      "type": "int",
+      "default": 0
+    }
+  ]
+}
