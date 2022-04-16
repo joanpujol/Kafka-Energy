@@ -3,17 +3,60 @@
   "name": "DeviceEvent",
   "fields": [
     {
+      "name": "id",
+      "type": "string",
+      "default": ""
+    },
+    {
       "name": "charging",
       "type": "int",
       "default": 0
     },
     {
       "name": "charging_source",
-      "type": ["null", "string"],
-      "default": null
+      "type": ["string", "null"],
+      "default": ""
     },
     {
       "name": "current_capacity",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "moduleL_temp",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "moduleR_temp",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "processor1_temp",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "processor2_temp",
+      "type": "int",
+      "default": 0
+    },    {
+      "name": "processor3_temp",
+      "type": "int",
+      "default": 0
+    },    {
+      "name": "processor4_temp",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "inverter_state",
+      "type": "int",
+      "default": 0
+    },
+    {
+      "name": "SoC_regulator",
       "type": "int",
       "default": 0
     }
