@@ -1,6 +1,6 @@
 package com.jpujol.kafkaenergy.cli;
 
-import com.jpujol.kafkaenergy.core.DeviceEvent;
+import com.jpujol.kafkaenergy.DeviceEvent;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;
 import io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde;
 import io.dropwizard.cli.Command;
@@ -49,8 +49,8 @@ public class StreamSaver extends Command {
         deviceEventSerde.configure(config, false);
 
         KStream<String, DeviceEvent> deviceEvents  = builder.stream("DeviceEvent-topic", Consumed.with(stringSerde, deviceEventSerde));
-        deviceEvents.filter((k, v) -> v.getChargingSource().toString().equals("solar"))
-                .to( "out-topic-2", Produced.with(stringSerde, deviceEventSerde));
+        deviceEvents.filter((k, v) -> v.getChargingSource().toString().equals("utility"))
+                .to( "out-topic-3", Produced.with(stringSerde, deviceEventSerde));
 
 
         KafkaStreams kafkaStreams = new KafkaStreams(builder.build(), streamsConfig);

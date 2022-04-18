@@ -1,5 +1,6 @@
 package com.jpujol.kafkaenergy.core;
 
+import com.jpujol.kafkaenergy.DeviceEvent;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;

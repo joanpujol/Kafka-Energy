@@ -1,6 +1,7 @@
 {
   "type": "record",
   "name": "DeviceEvent",
+  "namespace": "com.jpujol.kafkaenergy",
   "fields": [
     {
       "name": "id",
