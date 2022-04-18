@@ -42,7 +42,7 @@ public class KafkaEnergyProducer {
                     .setSoCRegulator(deviceEventModel.getSoC_regulator())
                     .build();
             ProducerRecord<String, DeviceEvent> producerRecord = new ProducerRecord<String, DeviceEvent>(
-                    TOPIC, deviceEvent
+                    TOPIC, (String) deviceEvent.getId(), deviceEvent
             );
             producer.send(producerRecord);
         } catch (Exception exception) {

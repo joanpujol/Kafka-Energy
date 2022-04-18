@@ -1,6 +1,7 @@
 package com.jpujol.kafkaenergy;
 
 import com.codahale.metrics.health.HealthCheck;
+import com.jpujol.kafkaenergy.cli.StreamSaver;
 import com.jpujol.kafkaenergy.resources.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.jdbi3.JdbiFactory;
@@ -21,7 +22,7 @@ public class KafkaEnergyApplication extends Application<KafkaEnergyConfiguration
 
     @Override
     public void initialize(final Bootstrap<KafkaEnergyConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addCommand(new StreamSaver());
     }
 
     @Override
